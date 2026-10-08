@@ -3,14 +3,36 @@
 `freuenzzaehler.kicad_sch` ist der komplette Schaltplan des BX-020-Frequenzzählers
 (Zeitbasis, Eingangsstufe, Vorteiler, 5× Zähler/Anzeige, Reset, Netzteil).
 
+## In KiCad-Desktop öffnen (empfohlen)
+
+Es liegt ein **vollständiges Projekt** vor (`freuenzzaehler.kicad_pro` +
+`freuenzzaehler.kicad_sch`):
+
+1. KiCad starten → **Datei → Projekt öffnen…** (*Open Existing Project*).
+2. **`freuenzzaehler.kicad_pro`** auswählen.
+3. Im Projektfenster auf die Schaltplan-Datei doppelklicken → der Schaltplan-Editor öffnet
+   sich.
+
+!!! wichtig
+    Direkt eine `.kicad_sch` über den **Projekt-Manager** zu öffnen schlägt fehl
+    („Endung stimmt nicht") – der Projekt-Manager erwartet die `.kicad_pro`. Entweder das
+    **Projekt** öffnen (oben) oder den **Schaltplan-Editor** separat starten und dort
+    *Datei → Öffnen* → `.kicad_sch`.
+
+Alle Symbole sind **in der Datei eingebettet** – es werden keine externen Bibliotheken
+benötigt, der Plan öffnet überall identisch. Bauteile lassen sich in KiCad frei
+verschieben; die elektrischen Verbindungen (Drähte, Labels, Power-Symbole) bleiben erhalten.
+
 ## Online ansehen (ohne Installation)
 
 1. Öffne **<https://kicanvas.org>**.
-2. Ziehe die Datei `freuenzzaehler.kicad_sch` ins Browserfenster (oder *Open local file*).
-3. Der Schaltplan wird direkt gerendert – alle Symbole sind **in der Datei eingebettet**,
-   es werden keine externen Bibliotheken benötigt.
+2. Ziehe `freuenzzaehler.kicad_sch` ins Browserfenster.
+3. Der Schaltplan wird direkt gerendert (eingebettete Symbole).
 
-Alternativ in **KiCad 7/8**: *Datei → Öffnen* → die `.kicad_sch` wählen.
+## Layout-Vorschau
+
+`preview.png` zeigt das aktuelle Layout als Bild (vom Generator erzeugt) – praktisch für
+einen schnellen Blick ohne KiCad.
 
 ## Aufbauprinzip des Plans
 

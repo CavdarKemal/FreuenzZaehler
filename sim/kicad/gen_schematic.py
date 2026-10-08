@@ -195,12 +195,12 @@ place("R7","R_sym","150k", 30, 195, {1:"DIV_IN",2:GND})
 place("IC1","IC_4017","74HC4017", 150, 165, {16:P5,8:GND,14:"DIV_IN",13:GND,15:GND,12:"FE_DIV10"})
 
 # ================= ZAEHLERKETTE + ANZEIGE (Teil 3/4) =================
-note("ZAEHLERKETTE + ANZEIGE (Teil 3/4)  -  5 Stellen, Carry-Kette + Segmentleitungen", 250, 108)
+note("ZAEHLERKETTE + ANZEIGE (Teil 3/4)  -  5 Stellen, Carry-Kette + Segmentleitungen", 205, 104)
 clk_in = ["FE_DIV10","CAR1","CAR2","CAR3","CAR4"]
 co_out = ["CAR1","CAR2","CAR3","CAR4","CAR5"]
 segs = ["a","b","c","d","e","f","g"]
-x_cnt, x_disp = 300, 360
-row_y = [135, 175, 215, 255, 295]
+x_cnt, x_disp = 235, 300
+row_y = [120, 160, 200, 240, 280]
 for i in range(5):
     ic, disp, st = f"IC{4+i}", f"DISP{i+1}", i+1
     yc = row_y[i]
