@@ -87,7 +87,7 @@ def emit_lib_symbol(libname):
     o.append(f'      (property "Value" "{libname}" (at 0 {-(half_h+2.5):.2f} 0) (effects (font (size 1.27 1.27))))')
     o.append(f'      (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
     o.append(f'      (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))')
-    o.append(f'      (symbol "fz:{libname}_0_1"')
+    o.append(f'      (symbol "{libname}_0_1"')
     if kind == "ic":
         o.append(f'        (rectangle (start {-HW:.2f} {half_h:.2f}) (end {HW:.2f} {-half_h:.2f}) '
                  f'(stroke (width 0.254) (type default)) (fill (type background)))')
@@ -102,7 +102,7 @@ def emit_lib_symbol(libname):
         o.append('        (polyline (pts (xy -1.2 1.2) (xy -1.2 -1.2) (xy 1.2 0) (xy -1.2 1.2)) (stroke (width 0.254) (type default)) (fill (type none)))')
         o.append('        (polyline (pts (xy 1.2 1.2) (xy 1.2 -1.2)) (stroke (width 0.254) (type default)) (fill (type none)))')
     o.append('      )')
-    o.append(f'      (symbol "fz:{libname}_1_1"')
+    o.append(f'      (symbol "{libname}_1_1"')
     for num, (x, y, rot, p) in coords.items():
         o.append(f'        (pin {p[3]} line (at {x:.2f} {y:.2f} {rot}) (length {PLEN:.2f}) '
                  f'(name "{p[1]}" (effects (font (size 0.9 0.9)))) '
@@ -115,24 +115,24 @@ def emit_lib_symbol(libname):
 POWER_LIB = '''    (symbol "fz:PWR_5V" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
       (property "Reference" "#PWR" (at 0 -2.5 0) (effects (font (size 1.0 1.0)) hide))
       (property "Value" "+5V" (at 0 3.2 0) (effects (font (size 1.4 1.4))))
-      (symbol "fz:PWR_5V_0_1"
+      (symbol "PWR_5V_0_1"
         (polyline (pts (xy -0.76 1.27) (xy 0 2.54) (xy 0.76 1.27)) (stroke (width 0.3) (type default)) (fill (type none)))
         (polyline (pts (xy 0 0) (xy 0 2.54)) (stroke (width 0.3) (type default)) (fill (type none)))
       )
-      (symbol "fz:PWR_5V_1_1"
+      (symbol "PWR_5V_1_1"
         (pin power_in line (at 0 0 90) (length 0) (name "+5V" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
     (symbol "fz:PWR_GND" (power) (pin_names (offset 0)) (in_bom no) (on_board yes)
       (property "Reference" "#PWR" (at 0 -3.5 0) (effects (font (size 1.0 1.0)) hide))
       (property "Value" "GND" (at 0 -3.8 0) (effects (font (size 1.4 1.4))))
-      (symbol "fz:PWR_GND_0_1"
+      (symbol "PWR_GND_0_1"
         (polyline (pts (xy 0 0) (xy 0 -1.27)) (stroke (width 0.3) (type default)) (fill (type none)))
         (polyline (pts (xy -1.27 -1.27) (xy 1.27 -1.27)) (stroke (width 0.3) (type default)) (fill (type none)))
         (polyline (pts (xy -0.76 -1.9) (xy 0.76 -1.9)) (stroke (width 0.3) (type default)) (fill (type none)))
         (polyline (pts (xy -0.25 -2.5) (xy 0.25 -2.5)) (stroke (width 0.3) (type default)) (fill (type none)))
       )
-      (symbol "fz:PWR_GND_1_1"
+      (symbol "PWR_GND_1_1"
         (pin power_in line (at 0 0 270) (length 0) (name "GND" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )'''
