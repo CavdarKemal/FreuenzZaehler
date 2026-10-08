@@ -9,6 +9,15 @@ Rechner ausprobieren, **bevor** du etwas kaufst oder lötest.
 |-----------|-------------|--------|-------|
 | **Falstad / CircuitJS** | `.txt` (Import aus Text) | Analog + Logik, im Browser | <https://www.falstad.com/circuit/> |
 | **LTspice** | `.cir` / `.asc` | genaue Analog-/SPICE-Simulation | kostenlos (Analog Devices) |
+| **KiCad / KiCanvas** | `.kicad_sch` | kompletter Schaltplan, im Browser ansehbar | <https://kicanvas.org> |
+
+## KiCad-Gesamtschaltplan ansehen
+
+Der komplette Schaltplan liegt als `sim/kicad/freuenzzaehler.kicad_sch` vor und lässt sich
+**ohne Installation** ansehen: Öffne **<https://kicanvas.org>** und ziehe die Datei ins
+Browserfenster. Alle Symbole sind eingebettet – keine externen Bibliotheken nötig.
+Verdrahtung über **globale Netz-Labels** (gleicher Name = verbunden); Netznamen-Liste in
+`sim/kicad/README.md`.
 
 ## Status der Dateien (ehrlich)
 
