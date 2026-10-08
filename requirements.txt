@@ -1,0 +1,6 @@
+# Dokumentations-Toolchain für das Frequenzzähler-Tutorial
+# Installation:  pip install -r requirements.txt
+# Vorschau:      python -m mkdocs serve
+# Bauen:         python -m mkdocs build
+
+mkdocs-material>=9.7

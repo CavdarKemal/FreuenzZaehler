@@ -1,0 +1,42 @@
+* Teil 5 - Eingangsstufe: einstufiger Verstaerker (Lern-Modell)
+* ---------------------------------------------------------------
+* Zweck:   Zeigt Arbeitspunkt (Kollektor-Ruhespannung ~1,9 V, Ic ~3 mA)
+*          und die Verstaerkung eines kleinen Eingangssignals.
+* Hinweis: Als Transistor dient hier das Standardmodell 2N3904 als
+*          Ersatz fuer den originalen HF-Typ SF245 (der SF245 ist ein
+*          schneller HF-Transistor; fuer das Prinzip und den Arbeitspunkt
+*          genuegt das langsamere Allerwelts-Modell vollkommen).
+* Laden:   In LTspice ueber File -> Open diese .cir oeffnen, dann "Run".
+*          Plots: V(c) = Kollektor (Ausgang), V(b) = Basis, V(out) = AC-Ausgang.
+* ---------------------------------------------------------------
+
+Vcc   vcc 0   DC 5
+
+* --- Arbeitspunkt (Basis-Spannungsteiler) ---
+Rb1   vcc b   39k
+Rb2   b   0   15k
+
+* --- Kollektor-/Emitterzweig ---
+Rc    vcc c   1k
+Re    e   0   220
+* Emitter-Bypass hebt die AC-Verstaerkung an (zum Experimentieren weglassen):
+Ce    e   0   10u
+
+* --- Transistor:  Kollektor  Basis  Emitter  Modell ---
+Q1    c   b   e   QNPN
+
+* --- Eingangssignal: 5 mV Spitze, 1 MHz, kapazitiv eingekoppelt ---
+Vin   in  0   SIN(0 5m 1Meg)
+Cin   in  b   1u
+
+* --- Ausgangskopplung an eine hochohmige Last ---
+Cout  c   out 1u
+Rload out 0   100k
+
+* Einfaches NPN-Modell
+.model QNPN NPN(Bf=150 Is=1e-14 Vaf=100)
+
+* Transientenanalyse: 5 us zeigen rund 5 Perioden bei 1 MHz
+.tran 10n 5u
+
+.end

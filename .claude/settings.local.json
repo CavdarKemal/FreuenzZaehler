@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.elektormagazine.de)",
+      "WebFetch(domain:www.box73.de)"
+    ]
+  }
+}

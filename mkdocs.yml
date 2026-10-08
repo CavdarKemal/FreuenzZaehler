@@ -1,0 +1,93 @@
+site_name: Frequenzzähler – Ein Tutorial von Grund auf
+site_description: >-
+  Schritt-für-Schritt-Entwicklung eines digitalen Frequenzzählers –
+  vom Zählprinzip über jede einzelne Baugruppe bis zum fertigen Gerät.
+  Für Studierende mit geringer Elektrotechnik-Erfahrung.
+site_author: Tutorial-Projekt FreuenzZaehler
+copyright: >-
+  Lehrmaterial. Als Vorlage dienten der Bausatz BX-020 (FUNKAMATEUR / Box 73,
+  K. Raban DG2XK) und ein Niederfrequenzzähler-Beitrag von Elektor.
+
+theme:
+  name: material
+  language: de
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Zu dunklem Modus wechseln
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Zu hellem Modus wechseln
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+  icon:
+    repo: fontawesome/brands/git-alt
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Startseite: index.md
+  - "Teil 0 – Grundlagen": teil-0-grundlagen.md
+  - "Teil 1 – Zeitbasis": teil-1-zeitbasis.md
+  - "Teil 2 – Das Tor (Gate)": teil-2-tor.md
+  - "Teil 3 – Der Zähler": teil-3-zaehler.md
+  - "Teil 4 – Die Anzeige": teil-4-anzeige.md
+  - "Teil 5 – Eingangsstufe": teil-5-eingangsstufe.md
+  - "Teil 6 – Steuerung & Timing": teil-6-steuerung.md
+  - "Teil 7 – Stromversorgung": teil-7-stromversorgung.md
+  - "Teil 8 – Integration & Inbetriebnahme": teil-8-integration.md
+  - "Teil 9 – Weiterführung": teil-9-weiterfuehrung.md
+  - Anhang:
+    - "Bauteilliste (BOM)": anhang-bom.md
+    - "Simulator-Dateien": anhang-simulation.md
+    - "Glossar": anhang-glossar.md
